@@ -23,7 +23,7 @@ const fetchData = async (imgStr) => {
    'Accept': 'application/json',
    'Content-Type': 'application/json'
   },
-  method: "POST",
+  method: "POST", 
   body: JSON.stringify(request)
  }).then(response => response.json());
 
