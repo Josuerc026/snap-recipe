@@ -1,0 +1,20 @@
+{
+  "name": "notes-app",
+  "version": "1.0.0",
+  "description": "Notes App using JS",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-jsbeautifier": "^2.1.2",
+    "gulp-sass": "^4.0.1",
+    "gulp-strip-debug": "^3.0.0"
+  },
+  "dependencies": {
+    "materialize-css": "^1.0.0-rc.2"
+  }
+}

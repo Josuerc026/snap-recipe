@@ -4,14 +4,104 @@
     <meta charset="UTF-8">
     <title>Snap Recipe</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Dosis:300,400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="dist/css/style.css">
 </head>
 <body>
-    <div class="img-board">
-        <div class="img-wrap input-wrap">
-            <input type="file" accept="image/*" capture="user" name="user-image" multiple>
+    <nav class="nav-extended">
+        <div class="nav-wrapper">
+            <a href="#!" class="brand-logo center">Snap Recipes</a>
+        </div>
+        <div class="nav-content container">
+            <ul class="tabs tabs-transparent">
+                <li class="tab"><a href="#test1" class="active">Items</a></li>
+                <li class="tab"><a href="#test2">Results <span class="new badge" data-badge-caption="">0</span></a></li>
+                <!--<li class="tab disabled"><a href="#test3">Disabled Tab</a></li>-->
+                <!--<li class="tab"><a href="#test4">Test 4</a></li>-->
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container main-content">
+        <div id="test1" class="col s12">
+            <div class="row">
+                <div class="col s12 m3">
+                    <h5>Capture and Get Recipes easily.</h5>
+                    <p>Don't know what to make with what's in your pantry? Take pictures and get a list of recipes that match your captured ingredients.</p>
+                    <button class="waves-effect waves-light btn get-recipes modal-trigger" data-target="confirm-group"><i class="material-icons left">fastfood</i>Get Recipes</button>
+                </div>
+                <div class="col s12 m9">
+                    <div class="img-board row">
+                        <div class="col s6 m4">
+                            <!--<div class="card">-->
+                                <!--<div class="card-image" style="background: url(${src}) no-repeat center center / cover; width: 100%; height: 100px;">-->
+                                    <!--<img src="${src}" data-label="${response.description}" style="display: none;">-->
+                                    <!--<button class="btn-floating halfway-fab waves-effect waves-light blue"><i class="material-icons re-analyze">refresh</i></button>-->
+                                <!--</div>-->
+                                <!--<div class="card-content">-->
+                                    <!--<span class="card-title">${response.description}</span>-->
+                                    <!--<p>Accuracy Level: ${Math.floor(response.score * 100)}%</p>-->
+                                    <!--<button class="waves-effect waves-light btn red mt-15 delete-item"><i class="material-icons left">delete_forever</i>Delete</button>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="test2" class="col s12">
+            Results
+        </div>
+        <!--<div class="row">-->
+            <!--<div class="col s12 m4 l3">-->
+                <!--<div class="img-board"></div>-->
+            <!--</div>-->
+            <!--<div class="col s12 m8 l9">-->
+                <!--<button class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>Get Recipes</button>-->
+            <!--</div>-->
+        <!--</div>-->
+
+        <!--<button class="waves-effect waves-light btn modal-trigger" data-target="recipe-results">Modal</button>-->
+
+        <!-- Modal Structure -->
+        <!--<div id="recipe-results" class="modal bottom-sheet">-->
+            <!--<div class="modal-content">-->
+                <!--<ul class="collection">-->
+                    <!--<li class="collection-item avatar">-->
+                        <!--<img src="images/yuna.jpg" alt="" class="circle">-->
+                        <!--<span class="title">Title</span>-->
+                        <!--<p>First Line <br>-->
+                            <!--Second Line-->
+                        <!--</p>-->
+                        <!--<a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>-->
+                    <!--</li>-->
+                <!--</ul>-->
+            <!--</div>-->
+        <!--</div>-->
+        <div id="confirm-group" class="modal">
+            <div class="modal-content">
+                <h4>Confirm 4 Items</h4>
+                <p>The following 4 items will be submitted to find recipes. Continue if you're okay with the selection or close to make any changes.</p>
+                <ul class="collection">
+                    <li class="collection-item">Apple</li>
+                    <li class="collection-item">Banana</li>
+                    <li class="collection-item">Orange</li>
+                    <li class="collection-item">Peas</li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close & Try Again</a>
+                <a href="#!" class="waves-effect waves-green btn-flat">Get Recipes</a>
+            </div>
+        </div>
+        <div class="fixed-action-btn">
+            <a class="btn-floating btn-large waves-effect waves-light blue modal-trigger tooltipped" data-position="left" data-tooltip="take a photo"><i class="material-icons">add_a_photo</i><input type="file" accept="image/*" capture="user" name="user-image" multiple></a>
         </div>
     </div>
+
+
+    <script src="dist/js/materialize.js"></script>
     <script src="dist/js/app.js"></script>
 </body>
 </html>
