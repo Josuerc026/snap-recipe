@@ -27,37 +27,27 @@
                 <div class="col s12 m3">
                     <h5>Capture and Get Recipes easily.</h5>
                     <p>Don't know what to make with what's in your pantry? Take pictures and get a list of recipes that match your captured ingredients.</p>
-                    <button class="waves-effect waves-light btn get-recipes modal-trigger" data-target="confirm-group"><i class="material-icons left">fastfood</i>Get Recipes</button>
+                    <button class="waves-effect waves-light btn get-recipes modal-trigger disabled" data-target="confirm-group"><i class="material-icons left">fastfood</i>Get Recipes</button>
                 </div>
                 <div class="col s12 m9">
-                    <div class="img-board row">
-                        <div class="col s6 m4">
-                        </div>
+                    <div class="img-board row mt-15">
                     </div>
                 </div>
             </div>
         </div>
         <div id="test2" class="col s12">
-            Results
+            <h5>Recipe results will display here.</h5>
+            <p>Tap the button on the bottom right to capture a picture and get started!</p>
         </div>
         <div id="confirm-group" class="modal">
-            <div class="modal-content">
-                <h4>Confirm 4 Items</h4>
-                <p>The following 4 items will be submitted to find recipes. Continue if you're okay with the selection or close to make any changes.</p>
-                <ul class="collection">
-                    <li class="collection-item">Apple</li>
-                    <li class="collection-item">Banana</li>
-                    <li class="collection-item">Orange</li>
-                    <li class="collection-item">Peas</li>
-                </ul>
-            </div>
+            <div class="modal-content"></div>
             <div class="modal-footer">
                 <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close & Try Again</a>
-                <a href="#!" class="waves-effect waves-green btn-flat">Get Recipes</a>
+                <a href="#!" class="waves-effect waves-green btn-flat get-recipes-confirm">Get Recipes</a>
             </div>
         </div>
         <div class="fixed-action-btn">
-            <a class="btn-floating btn-large waves-effect waves-light blue modal-trigger tooltipped" data-position="left" data-tooltip="take a photo"><i class="material-icons">add_a_photo</i><input type="file" accept="image/*" capture="user" name="user-image" multiple></a>
+            <a class="btn-floating btn-large waves-effect waves-light blue modal-trigger"><i class="material-icons">add_a_photo</i><input type="file" accept="image/*" capture="user" name="user-image" multiple></a>
         </div>
     </div>
     <script src="dist/js/materialize.js"></script>
