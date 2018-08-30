@@ -56,9 +56,9 @@ class renderElements {
     }
     getProgressBar(v) {
         if (v) {
-            this._root.insertAdjacentHTML('afterbegin', '<div class="progress"><div class="indeterminate"></div></div>');
+            this._root.insertAdjacentHTML('afterbegin', '<div class="col-progress col s12 m6 l4"><div class="progress"><div class="indeterminate"></div></div></div>');
         } else {
-            this._root.querySelector('.progress').remove();
+            this._root.querySelector('.col-progress').remove();
         }
     }
 }
@@ -99,6 +99,35 @@ const fetchData = async (imgStr) => {
     return response;
 };
 
+const fetchRecipeIds = async () => {
+    //http://food2fork.com/api/search?key=d21438f37fb5cfdecc886e9364e0549a&q=apple,tortilla
+    let response = await fetch('http://food2fork.com/api/search?key=d21438f37fb5cfdecc886e9364e0549a&q=banana',{
+        method: 'GET'
+    }).then(response => response.json());
+    let recipeIds = response.recipes.map(recipe => recipe.recipe_id);
+    return recipeIds;
+}
+const fetchRecipes = async (ids) => {
+    let first = ids[0];
+    let response = await fetch(`http://food2fork.com/api/get?key=d21438f37fb5cfdecc886e9364e0549a&rId=${first}`,{
+    method: 'GET'
+    }).then(response => response.json());
+    console.log(response);
+
+    let recipe = response.recipe.ingredients.map(ingredient => {
+        let regexp = RegExp('bananas?', 'gm');
+        let check = regexp.test(ingredient);
+        if(!check){
+            return ingredient;
+        }else{
+            return null;
+        }
+    });
+}
+(async function (){
+    let ids = await fetchRecipeIds();
+    fetchRecipes(ids);
+})();
 
 const reAnalyze = async (elem) => {
     let imgStr = elem.querySelector('img').src;
@@ -111,7 +140,7 @@ const reAnalyze = async (elem) => {
 };
 
 const deleteItem = (elem) => {
-    elem.remove();
+    elem.closest('.col').remove();
     checkToDisable();
 };
 
