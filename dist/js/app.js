@@ -106,7 +106,7 @@ const fetchRecipeIds = async () => {
     }).then(response => response.json());
     let recipeIds = response.recipes.map(recipe => recipe.recipe_id);
     return recipeIds;
-}
+};
 const fetchRecipes = async (ids) => {
     let first = ids[0];
     let response = await fetch(`http://food2fork.com/api/get?key=d21438f37fb5cfdecc886e9364e0549a&rId=${first}`,{
@@ -117,13 +117,14 @@ const fetchRecipes = async (ids) => {
     let recipe = response.recipe.ingredients.map(ingredient => {
         let regexp = RegExp('bananas?', 'gm');
         let check = regexp.test(ingredient);
+        console.log(check);
         if(!check){
             return ingredient;
         }else{
             return null;
         }
     });
-}
+};
 (async function (){
     let ids = await fetchRecipeIds();
     fetchRecipes(ids);

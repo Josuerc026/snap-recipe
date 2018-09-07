@@ -1,0 +1,15 @@
+{
+  "name": "sr-server",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "nodemon src/app.js --exec"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.17.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "morgan": "^1.8.2",
+    "nodemon": "^1.11.0"
+  }
+}
