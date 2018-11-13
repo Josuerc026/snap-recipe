@@ -1,0 +1,57 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        title Snap Recipe
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        link(href='https://fonts.googleapis.com/css?family=Dosis:300,400', rel='stylesheet')
+        link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
+        link(rel='stylesheet', href='/public/css/style.css')
+    body
+        nav.nav-extended
+            .nav-wrapper
+                a.brand-logo.center(href='#!') Snap Recipes
+            .nav-content.container
+                ul.tabs.tabs-transparent
+                    li.tab
+                        a.active(href='#test1') Items
+                    li.tab
+                        a(href='#test2')
+                            | Results
+                            span.new.badge(data-badge-caption='') 0
+        .container.main-content
+            #test1.col.s12
+                .row
+                    .col.s12.m3
+                        h5 Capture and Get Recipes easily.
+                        p
+                            | Don't know what to make with what's in your pantry? Take pictures and get a list of recipes that match your captured ingredients.
+                        button.waves-effect.waves-light.btn.get-recipes.modal-trigger.disabled(data-target='confirm-group')
+                            i.material-icons.left fastfood
+                            | Get Recipes
+                    .col.s12.m9
+                        .img-board.row.mt-15
+            #test2.col.s12
+                h5 Recipe results will display here.
+                p Tap the button on the bottom right to capture a picture and get started!
+                ul.collection
+                    li.collection-item.avatar
+                        img.circle(src='images/yuna.jpg', alt='')
+                        span.title Title
+                        p
+                            | First Line
+                            br
+                            |                         Second Line
+                        a.secondary-content(href='#!')
+                            i.material-icons grade
+            #confirm-group.modal
+                .modal-content
+                .modal-footer
+                    a.modal-close.waves-effect.waves-green.btn-flat(href='#!') Close & Try Again
+                    a.waves-effect.waves-green.btn-flat.get-recipes-confirm(href='#') Get Recipes
+            .fixed-action-btn
+                a.btn-floating.btn-large.waves-effect.waves-light.blue
+                    i.material-icons add_a_photo
+                    input(type='file', accept='image/*', capture='user', name='user-image', multiple='')
+        script(src='/public/js/materialize.js')
+        script(src='/public/js/app.js')
